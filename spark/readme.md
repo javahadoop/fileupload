@@ -39,3 +39,15 @@ resultRdd.saveAsTextFile("file:///data/fileS/output/")
 
 
 192.168.211.130:8088
+
+
+spark
+spark-evn.sh
+export HADOOP_CONF_DIR=/home/hadoop/hadoop-XXX/etc/hadoop
+
+
+
+
+
+
+
