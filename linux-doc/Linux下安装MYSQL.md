@@ -96,3 +96,44 @@ Note: This output shows SysV services only and does not include native
 
 mysql          	0:off	1:off	2:on	3:on	4:on	5:on	6:off
 
+
+/var/lib/mysql
+
+
+修改配置文件
+/usr/share/mysql/my-huge.cnf
+cp /usr/share/mysql/my-huge.cnf   /etc/my.cnf
+
+mysql> show variables like '%char%';
++--------------------------+----------------------------+
+| Variable_name            | Value                      |
++--------------------------+----------------------------+
+| character_set_client     | utf8                       |
+| character_set_connection | utf8                       |
+| character_set_database   | latin1                     |
+| character_set_filesystem | binary                     |
+| character_set_results    | utf8                       |
+| character_set_server     | latin1                     |
+| character_set_system     | utf8                       |
+| character_sets_dir       | /usr/share/mysql/charsets/ |
++--------------------------+----------------------------+
+8 rows in set (0.00 sec)
+
+default-character-set=utf8
+
+[client]
+#password       = your_password
+port            = 3306
+socket          = /var/lib/mysql/mysql.sock
+default-character-set=utf8
+[mysqld]
+port            = 3306
+character_set_server=utf8
+character_set_client=utf8
+collation_server=utf8_general_ci
+[mysql]
+no-auto-rehash
+default-character-set=utf8
+
+
+
