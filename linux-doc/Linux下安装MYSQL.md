@@ -137,3 +137,7 @@ default-character-set=utf8
 
 
 
+
+
+
+用root登录，打开并修改 /etc/my.cnf；在[mysqld]节点下，加入一行： lower_case_table_names=1。
